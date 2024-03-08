@@ -1,33 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*,
+*::after,
+*::before {
+  @apply m-0 p-0
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.header {
+    box-shadow: 0px 4px 18px 10px #ffffff8a, 0px -4px 14px 8px #ffffff8a;
+  @apply rounded-md min-h-fit p-2 bg-white w-full
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.body {
+  font-family: "Nunito Sans", sans-serif;
+  @apply md:flex md:flex-col md:items-center bg-gradient-to-b from-white to-pea-300 pt-8
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+.main {
+  @apply flex flex-col min-h-screen md:pt-10
+}
+
+.popup {
+  box-shadow: 2px 8px 20px #00000039, 2px 4px 16px #00000039;
+}
+
+.card {
+  box-shadow: 2px 8px 20px #00000039, 2px 4px 16px #00000039;
+  @apply flex flex-col col-span-1 row-span-1 rounded-xl relative h-64 w-48 text-white
+}
+
+.hollow-card {
+  @apply flex flex-col rounded-xl relative h-64 w-48 text-white font-bold text-sm text-center justify-center cursor-pointer shadow-inner shadow-black/50
+}
+
+svg:hover {
+  transform: scale(125%);
+  transition: all ease-in-out 350ms;
+  @apply cursor-pointer
+}
+
+button {
+  font-family: "Nunito Sans", sans-serif;
 }
