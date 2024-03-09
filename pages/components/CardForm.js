@@ -1,4 +1,4 @@
-import { CardsDispatch } from "@/context/CardsContext";
+import { CardsDispatch, EditingContext } from "@/context/CardsContext";
 import { useContext, useEffect, useState } from "react";
 
 let nextId = 3;
@@ -12,21 +12,55 @@ const CardForm = () => {
 	const [newEmail, setNewEmail] = useState("");
 	const [isPicking, setIsPicking] = useState(false);
 
+	const { isEditing, setIsEditing, cardToEdit, setCardToEdit } = useContext(EditingContext);
+
 	const dispatch = useContext(CardsDispatch);
 
-	function prevent(event) {
-		event.preventDefault();
+	useEffect(() => {
+		if (isEditing === true) {
+			setNewImage(cardToEdit.image);
+			setNewName(cardToEdit.name);
+			setNewTitle(cardToEdit.title);
+			setNewAdress(cardToEdit.adress);
+			setNewPhone(cardToEdit.phone);
+			setNewEmail(cardToEdit.email);
+		} else {
+			setNewImage("");
+			setNewName("");
+			setNewTitle("");
+			document.getElementById("submitForm").reset();
+			setNewAdress("");
+			setNewPhone("");
+			setNewEmail("");
+		}
+	}, [isEditing]);
 
-		dispatch({
-			type: "created",
-			id: nextId++,
-			image: newImage,
-			name: newName,
-			title: newTitle,
-			adress: newAdress,
-			phone: newPhone,
-			email: newEmail,
-		});
+	function submitCard(event) {
+		event.preventDefault();
+		if (isEditing) {
+			setIsEditing(!isEditing);
+			dispatch({
+				type: "edited",
+				id: cardToEdit.id,
+				image: newImage,
+				name: newName,
+				title: newTitle,
+				adress: newAdress,
+				phone: newPhone,
+				email: newEmail,
+			});
+		} else {
+			dispatch({
+				type: "created",
+				id: nextId++,
+				image: newImage,
+				name: newName,
+				title: newTitle,
+				adress: newAdress,
+				phone: newPhone,
+				email: newEmail,
+			});
+		}
 	}
 
 	useEffect(() => {
@@ -36,7 +70,8 @@ const CardForm = () => {
 	return (
 		<>
 			<form
-				onSubmit={(e) => prevent(e)}
+				id="submitForm"
+				onSubmit={(e) => submitCard(e)}
 				className={
 					isPicking
 						? "hidden"
@@ -121,10 +156,10 @@ const CardForm = () => {
 				</select>
 				<button
 					id="submit"
+					form="submitForm"
 					className="  bg-pea-400 active:bg-pea-600  text-white font-bold h-min w-min p-2 rounded-md cursor-pointer text-sm text-center border-none shadow-sm hover:shadow-md active:shadow-sm shadow-black/60 hover:shadow-black/20  active:shadow-black/40 transition-all md:mt-0 place-self-center "
-					onClick={(e) => prevent(e)}>
-					{" "}
-					Submit
+					onClick={(e) => submitCard(e)}>
+					{isEditing ? "Save" : "Submit"}
 				</button>
 			</form>
 
