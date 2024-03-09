@@ -1,4 +1,4 @@
-import { CardsContext, CardsDispatch } from "@/context/CardsContext";
+import { CardsDispatch } from "@/context/CardsContext";
 import { useContext, useEffect, useState } from "react";
 
 let nextId = 3;
