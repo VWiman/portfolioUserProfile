@@ -40,7 +40,7 @@ const CardForm = () => {
 				className={
 					isPicking
 						? "hidden"
-						: "flex flex-col md:grid md:grid-cols-2 py-10 rounded-xl items-center content-center max-h-fit lg:max-h-64 mx-32"
+						: "flex flex-col md:grid md:grid-cols-2 py-10 md:py-12 rounded-xl items-center  place-content-center w-full md:min-w-[32rem] max-h-fit lg:max-h-64 bg-pea-500 form"
 				}>
 				<label
 					onClick={() => setIsPicking(true)}
@@ -55,7 +55,7 @@ const CardForm = () => {
 					className={
 						newImage
 							? "hollow-card row-span-4 place-self-center"
-							: "bg-white hollow-card row-span-4 place-self-center text-white"
+							: "bg-white hollow-card row-span-4 place-self-center md:place-self-end text-white"
 					}>
 					<div className="bg-pea-800/80 py-2">
 						<svg
@@ -80,28 +80,28 @@ const CardForm = () => {
 					</div>
 				</label>
 
-				<label className=" max-h-12 m-4 md:mt-0 place-self-center">
+				<label className=" max-h-12 m-4 mr-0 md:mt-0 place-self-center">
 					<input
 						className="max-w-28 p-1"
 						value={newName}
 						onChange={(e) => setNewName(e.target.value)}
 						placeholder="Name"></input>
 				</label>
-				<label className=" max-h-12 m-4 place-self-center">
+				<label className=" max-h-12 m-4 mr-0 place-self-center">
 					<input
 						className="max-w-28 p-1"
 						value={newAdress}
 						onChange={(e) => setNewAdress(e.target.value)}
 						placeholder="Adress"></input>
 				</label>
-				<label className=" max-h-12 m-4 place-self-center">
+				<label className=" max-h-12 m-4 mr-0 place-self-center">
 					<input
 						className="max-w-28 p-1"
 						value={newEmail}
 						onChange={(e) => setNewEmail(e.target.value)}
 						placeholder="Email"></input>
 				</label>
-				<label className=" max-h-12 m-4 place-self-center">
+				<label className=" max-h-12 m-4 mr-0 place-self-center">
 					<input
 						className="max-w-28 p-1"
 						value={newPhone}
@@ -111,7 +111,7 @@ const CardForm = () => {
 				<select
 					value={newTitle}
 					onChange={(e) => setNewTitle(e.target.value)}
-					className="max-w-32 m-4 place-self-center max-h-12 p-1">
+					className=" min-w-[124px] md:min-w-[12rem] place-self-center md:place-self-end max-h-12 p-1 my-4 md:m-0 ml-4">
 					<option>Select a title</option>
 					<option>Actor</option>
 					<option>Actress</option>
@@ -121,8 +121,9 @@ const CardForm = () => {
 				</select>
 				<button
 					id="submit"
-					className="  bg-pea-500 hover:bg-pea-400 active:bg-pea-600  text-white font-bold h-min w-min p-2 rounded-md cursor-pointer text-sm text-center border-none shadow-sm hover:shadow-md active:shadow-sm shadow-black/60 hover:shadow-black/20  active:shadow-black/40 transition-all mt-4 md:mt-0 place-self-center"
+					className="  bg-pea-400 active:bg-pea-600  text-white font-bold h-min w-min p-2 rounded-md cursor-pointer text-sm text-center border-none shadow-sm hover:shadow-md active:shadow-sm shadow-black/60 hover:shadow-black/20  active:shadow-black/40 transition-all md:mt-0 ml-4 place-self-center "
 					onClick={(e) => prevent(e)}>
+					{" "}
 					Submit
 				</button>
 			</form>

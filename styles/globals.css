@@ -16,7 +16,7 @@
 
 .body {
   font-family: "Nunito Sans", sans-serif;
-  @apply md:flex md:flex-col md:items-center bg-gradient-to-b from-white to-pea-300 pt-8
+  @apply md:flex md:flex-col md:items-center bg-gradient-to-b from-white to-pea-300 p-8
 }
 
 
@@ -35,6 +35,10 @@
 
 .hollow-card {
   @apply flex flex-col rounded-xl relative h-64 w-48 text-white font-bold text-sm text-center justify-center cursor-pointer shadow-inner shadow-black/50
+}
+
+.form {
+    box-shadow: 1px 2px 10px #00000029, 1px 2px 8px #00000029;
 }
 
 svg:hover {
