@@ -20,7 +20,7 @@
 
 
 .main {
-  @apply flex flex-col min-h-screen md:pt-10
+  @apply flex flex-col md:pt-10
 }
 
 .popup {
