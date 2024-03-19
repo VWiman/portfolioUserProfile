@@ -9,13 +9,17 @@
   @apply m-0 p-0
 }
 
+body {
+  @apply bg-gradient-to-b from-pea-50 to-pea-300 p-8
+}
+
 .header {
   @apply flex flex-row rounded-md min-h-fit p-2 w-full justify-center
 }
 
 .body {
   font-family: "Nunito Sans", sans-serif;
-  @apply md:flex md:flex-col md:items-center bg-gradient-to-b from-pea-50 to-pea-300 p-8
+  @apply md:flex md:flex-col md:items-center
 }
 
 
