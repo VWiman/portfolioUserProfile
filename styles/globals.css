@@ -10,7 +10,7 @@
 }
 
 .header {
-  @apply rounded-md min-h-fit p-2 w-full
+  @apply flex flex-row rounded-md min-h-fit p-2 w-full justify-center
 }
 
 .body {
