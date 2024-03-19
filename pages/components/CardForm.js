@@ -117,28 +117,28 @@ const CardForm = () => {
 
 				<label className=" max-h-12 m-4 md:mr-0 md:mt-0 place-self-center">
 					<input
-						className="max-w-28 p-1"
+						className="max-w-28 p-1 rounded-md border-0"
 						value={newName}
 						onChange={(e) => setNewName(e.target.value)}
 						placeholder="Name"></input>
 				</label>
 				<label className=" max-h-12 m-4 md:mr-0 place-self-center">
 					<input
-						className="max-w-28 p-1"
+						className="max-w-28 p-1 rounded-md border-0"
 						value={newAdress}
 						onChange={(e) => setNewAdress(e.target.value)}
 						placeholder="Adress"></input>
 				</label>
 				<label className=" max-h-12 m-4 md:mr-0 place-self-center">
 					<input
-						className="max-w-28 p-1"
+						className="max-w-28 p-1 rounded-md border-0"
 						value={newEmail}
 						onChange={(e) => setNewEmail(e.target.value)}
 						placeholder="Email"></input>
 				</label>
 				<label className=" max-h-12 m-4 md:mr-0 place-self-center">
 					<input
-						className="max-w-28 p-1"
+						className="max-w-28 p-1 rounded-md border-0"
 						value={newPhone}
 						onChange={(e) => setNewPhone(e.target.value)}
 						placeholder="Phone"></input>
@@ -146,7 +146,7 @@ const CardForm = () => {
 				<select
 					value={newTitle}
 					onChange={(e) => setNewTitle(e.target.value)}
-					className=" min-w-[124px] md:min-w-[12rem] place-self-center md:place-self-end max-h-12 p-1 my-4 md:m-0">
+					className="min-w-[124px] md:min-w-[12rem] place-self-center md:place-self-end max-h-12 p-1 my-4 md:m-0 rounded-md">
 					<option>Select a title</option>
 					<option>Actor</option>
 					<option>Actress</option>
@@ -157,7 +157,7 @@ const CardForm = () => {
 				<button
 					id="submit"
 					form="submitForm"
-					className="  bg-pea-400 active:bg-pea-600  text-white font-bold h-min w-min p-2 rounded-md cursor-pointer text-sm text-center border-none shadow-sm hover:shadow-md active:shadow-sm shadow-black/60 hover:shadow-black/20  active:shadow-black/40 transition-all md:mt-0 place-self-center "
+					className="border-0 bg-pea-400 active:bg-pea-600  text-white font-bold h-min w-min p-2 rounded-md cursor-pointer text-sm text-center border-none shadow-sm hover:shadow-md active:shadow-sm shadow-black/60 hover:shadow-black/20  active:shadow-black/40 transition-all md:mt-0 place-self-center "
 					onClick={(e) => submitCard(e)}>
 					{isEditing ? "Save" : "Submit"}
 				</button>
