@@ -10,7 +10,7 @@
 }
 
 body {
-  @apply bg-gradient-to-b from-pea-50 to-pea-300 p-8
+  @apply bg-pea-300
 }
 
 .header {
@@ -19,7 +19,7 @@ body {
 
 .body {
   font-family: "Nunito Sans", sans-serif;
-  @apply md:flex md:flex-col md:items-center
+  @apply md:flex md:flex-col md:items-center p-8 bg-gradient-to-b from-pea-50 to-pea-300
 }
 
 
